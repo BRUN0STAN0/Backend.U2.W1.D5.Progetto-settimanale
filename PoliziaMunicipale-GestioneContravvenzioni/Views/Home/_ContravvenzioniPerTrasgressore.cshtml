@@ -1,0 +1,44 @@
+﻿@model IEnumerable<PoliziaMunicipale_GestioneContravvenzioni.Models.Contravvenzione>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.T_Cognome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.T_Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.V_TotaleImporto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.V_NumeroVerbali)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.T_Cognome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.T_Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.V_TotaleImporto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.V_NumeroVerbali)
+        </td>
+        @*<td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>*@
+    </tr>
+}
+
+</table>

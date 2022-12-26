@@ -1,0 +1,76 @@
+﻿@model IEnumerable<PoliziaMunicipale_GestioneContravvenzioni.Models.Trasgressore>
+
+@{
+    ViewBag.Title = "Trasgressori";
+}
+
+<h2>Trasgressori</h2>
+
+<p>
+    @Html.ActionLink("Archivia nuovo trasgressore", "Create", new { }, htmlAttributes: new { @class = "btn", @style = "background-color: #292b2c; color: white;" })
+</p>
+<table class="table table-bordered img-rounded" style="background-color:white;">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Cognome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Indirizzo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Citta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CAP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CodiceFiscale)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotaleViolazioni)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotaleDecurtamentoPunti)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+            @Html.HiddenFor(modelItem => item.ID_Anagrafica)
+        <td>
+            @Html.DisplayFor(modelItem => item.Cognome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Indirizzo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Citta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CAP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CodiceFiscale)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotaleViolazioni)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotaleDecurtamentoPunti)
+        </td>
+        <td>
+            @Html.ActionLink("Modifica", "Edit", new { id=item.ID_Anagrafica }, htmlAttributes: new { @class = "btn btn-sm btn-primary" }) 
+            @*@Html.ActionLink("Details", "Details", new { id=item.PrimaryKey }) |*@
+            @Html.ActionLink("X", "Delete", new {  id=item.ID_Anagrafica  }, htmlAttributes: new { @class = "btn btn-sm btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

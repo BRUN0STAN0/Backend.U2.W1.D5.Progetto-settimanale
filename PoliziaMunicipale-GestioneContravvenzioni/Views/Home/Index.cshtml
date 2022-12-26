@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "Contravvenzioni";
+}
+
+<h2>Contravvenzioni</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <button style="width:100%" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            Contravvenzioni raggruppate per trasgressore
+        </button>
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body img-rounded  table-bordered" style="background-color:white;">
+               @{
+                   Html.RenderAction("_ContravvenzioniPerTrasgressore", "Home");
+               }
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <button style="width:100%"  class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">
+            Punti decurtati per ogni trasgressore
+        </button>
+        <div class="collapse" id="collapseExample1">
+            <div class="card card-body img-rounded  table-bordered" style="background-color:white;">
+                @{
+                    Html.RenderAction("_PuntiDecurtatiPerOgniTrasgressore", "Home");
+                }
+            </div>
+        </div>
+    </div>
+    </div>
+<div class="row">
+    <div class="col-md-6">
+        <button style="width:100%" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
+            Contravvenzioni che superano i 10 punti
+        </button>
+        <div class="collapse" id="collapseExample2">
+            <div class="card card-body img-rounded  table-bordered" style="background-color:white;">
+                @{
+                    Html.RenderAction("_ContravvenzioniSuperano10Punti", "Home");
+                }
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <button style="width:100%" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
+            Contravvenzioni con importo maggiore a 400€
+        </button>
+        <div class="collapse" id="collapseExample3">
+            <div class="card card-body img-rounded  table-bordered" style="background-color:white;">
+                @{
+                    Html.RenderAction("_ContravvenzioniImportoMaggiore400", "Home");
+                }
+            </div>
+        </div>
+    </div>
+</div>

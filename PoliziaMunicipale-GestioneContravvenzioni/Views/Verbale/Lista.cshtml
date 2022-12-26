@@ -1,0 +1,81 @@
+﻿@model IEnumerable<PoliziaMunicipale_GestioneContravvenzioni.Models.Verbale>
+
+@{
+    ViewBag.Title = "Verbali";
+}
+
+<h2>Verbali</h2>
+
+<p>
+    @Html.ActionLink("Archivia nuovo verbale", "Archivia", new { } , htmlAttributes: new { @class = "btn" , @style = "background-color: #292b2c; color: white;" })
+</p>
+<table class="table table-bordered img-rounded " style="background-color:white;">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_Verbale)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NominativoAgente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataViolazione)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IndirizzoViolazione)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataTrascrizioneVerbale)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Importo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DecurtamentoPunti)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoViolazione)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeCognomeTrasgressore)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID_Verbale)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NominativoAgente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataViolazione)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IndirizzoViolazione)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataTrascrizioneVerbale)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Importo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DecurtamentoPunti)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoViolazione)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeCognomeTrasgressore)
+        </td>
+        <td style="min-width:130px">
+            @Html.ActionLink("Modifica", "Edit", new {  id=item.ID_Verbale }, htmlAttributes: new {@class="btn btn-sm btn-primary"}) 
+            @*@Html.ActionLink("Details", "Details", new { id = item.ID_Verbale }) |*@
+            @Html.ActionLink("X", "Delete", new { id = item.ID_Verbale }, htmlAttributes: new { @class = "btn btn-sm btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>
